@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello NodeJS AJAX</title>
+</head>
+<body>
+  <h2>through AJAX call the gethello method</h2>
+  <button onclick="fetchdata()">Click to Say Hello</button>
+  <p id="responseText"></p>
+
+  <script>
+     function fetchdata(){
+            fetch("http://localhost:8000/route/getdata")
+            .then((res)=>{
+                return res.text();
+            })
+            .then((data)=>{
+                document.getElementById("responseText").innerHTML=data
+            })
+            .catch((err)=>{})
+        }
+   
+  </script>
+</body>
+</html>

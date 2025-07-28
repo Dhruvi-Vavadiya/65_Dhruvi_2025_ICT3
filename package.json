@@ -17,6 +17,12 @@
   "homepage": "https://github.com/Dhruvi-Vavadiya/65_Dhruvi_2025_ICT3#readme",
   "description": "",
   "dependencies": {
-    "express": "^5.1.0"
+    "cookie-parser": "^1.4.7",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.18.2",
+    "express-validator": "^7.2.1",
+    "multer": "^2.0.2"
   }
 }
