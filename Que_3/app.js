@@ -1,5 +1,3 @@
-// app.js
-
 const readline = require('readline');
 const chatbot = require('./chatbot');
 
@@ -8,8 +6,6 @@ const rl = readline.createInterface({
     output: process.stdout,
     prompt: 'You> '
 });
-
-console.log("🤖 Welcome to IT Support Chatbot! Type 'exit' to quit.");
 rl.prompt();
 
 rl.on('line', (input) => {

@@ -6,6 +6,8 @@ npm install express-session
 npm install cookie-parser
 npm i ejs
 npm i express-validator
+npm i node-fetch
+npm install bluebird
 npm i express-ejs-layouts
 npm i registration_validation
 

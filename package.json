@@ -3,11 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",                     
-    "test": "node test.js",                         
-    "dev": "nodemon server.js",                     
-    "lint": "echo 'license: ISC'",              
-    "welcome": "echo 'Welcome to My Node App!'"   
+    "create": "npm init -y",
+    "installnodemon": "npm i nodemon",
+    "runnodemon": "nodemon app.js",
+    "welcome": "echo 'Welcome to My Node App!'"
   },
   "repository": {
     "type": "git",
@@ -21,6 +20,7 @@
   "homepage": "https://github.com/Dhruvi-Vavadiya/65_Dhruvi_2025_ICT3#readme",
   "description": "",
   "dependencies": {
+    "bluebird": "^3.7.2",
     "body-parser": "^2.2.0",
     "cookie-parser": "^1.4.7",
     "ejs": "^3.1.10",
@@ -29,7 +29,7 @@
     "express-session": "^1.18.2",
     "express-validator": "^7.2.1",
     "multer": "^2.0.2",
-    "node-fetch": "^3.3.2",
+    "node-fetch": "^2.7.0",
     "registration_validation": "^1.0.0"
   }
 }

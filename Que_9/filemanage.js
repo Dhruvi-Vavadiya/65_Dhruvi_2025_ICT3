@@ -7,8 +7,6 @@ const fs = require('fs');
     } catch (err) {
       console.error("Read error:", err.message);
     }
-
-
 //write file
 fs.writeFileSync("writefile_demo.txt","Hello,Good morning mahadev");
 console.log("File written successfully");

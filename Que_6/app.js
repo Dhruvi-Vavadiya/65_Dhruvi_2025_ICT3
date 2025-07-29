@@ -1,10 +1,12 @@
+const Promise = require('bluebird');
+const fs = Promise.promisifyAll(require('fs'));
 
-const fs = require('fs');
+const unlinkFile = Promise.promisify(require("fs").unlink);
 
-fs.unlink("example_file.txt",
-    (err => {
-        if (err) console.log(err);
-        else {
-            console.log("\nDeleted file: example_file.txt");
-        }
-    }));
+unlinkFile("./example_file.txt")
+  .then(() => {
+    console.log("example_file.txt deleted successfully.");
+  })
+  .catch((err) => {
+    console.error("Error deleting file:", err.message);
+  });
