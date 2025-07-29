@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#btnreg").click(function(event) {
+                event.preventDefault(); // Prevent form submission
+                $.ajax({
+                    type: "POST",
+                    url: "/submit",
+                    data : {
+                        email : $("#email").val(),
+                        mobile : $("#mobile").val(),
+                        password : $("#password").val(),
+                        name : $("#name").val()
+                    },
+                    success: function(response) {
+                        $("#resultDiv").text(response);
+                        $("#errDiv").html("");
+                    },
+                    error: function(res) {
+                         $("#resultDiv").html("");
+                        const errors = res.responseJSON.errors;
+                        // alert("Validation failed: " + JSON.stringify(errors));
+                        // console.log(errors);
+                        let errorHtml = "<ul>";
+                        errors.forEach((error) => {
+                            errorHtml += `<li>${error.msg}</li>`;
+                        });
+                        errorHtml += "</ul>";
+                        $("#errDiv").html(errorHtml);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>Registration Form</h2>
+     <div id="errDiv" style="color: red;"></div>
+    <form action="/submit" >
+        Email: <input type="text" name="email" id="email"><br>
+        Mobile: <input type="text" name="mobile" id="mobile"><br>
+        Password: <input type="password" name="password" id="password"><br>
+        Name: <input type="text" name="name" id="name"><br>
+        <!-- <button type="submit">Register</button> -->
+        <input type="button" value="Submit_req" id="btnreg" name="submit2">
+    </form>
+    <div id="resultDiv" style="color: green;"></div>
+</body>
+</html>
